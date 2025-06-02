@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Système Solaire{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <header>
+        <nav>
+            <div class="nav__content">
+                <div class="logo"><a href="{{ path('app_home') }}">Système Solaire</a></div>
+                <ul>
+                    <li><a href="{{ path('app_planets') }}">Planète</a></li>
+                    <li><a href="{{ path('app_team') }}">Equipe</a></li>
+                    <li><a href="{{ path('app_planning') }}">Planning</a></li>
+                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                    <li><a href="https://fr.wikipedia.org/wiki/Syst%C3%A8me_solaire" class="lien">Wikipédia</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="sun"></div>
+        <div class="mercure"></div>
+        <div class="venus"></div>
+        <div class="terre">
+            <div class="lune"></div>
+        </div>
+        <div class="mars"></div>
+        <div class="jupiter"></div>
+        <div class="saturne"></div>
+        <div class="uranus"></div>
+        <div class="neptune"></div>
+    </div>
+{% endblock %} 

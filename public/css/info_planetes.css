@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Raleway&family=Tilt+Neon&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img_fond/Test.gif);
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* raccourci avec var() */
+
+:root {
+	--primary-color: #ffff;
+	--primary-color-dark: #9333ea;
+	--secondary-color: #ca8a04;
+	--text-dark: #1f2937;
+	--text-light: #6b7280;
+	--extra-light: #faf5ff;
+	--max-width: 1200px;
+}
+
+/* Début du css de la navbar */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	font-family: "Poppins", sans-serif;
+}
+
+nav {
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: blueviolet;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__content {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+nav .logo a:hover {
+    color: #ca8a04;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+}
+
+ul li a {
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+ul li a:hover {
+    border-left-color: #ca8a04;
+    color: #ca8a04;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+/* Fin du css de la navbar */
+  
+  .wrapper {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    box-shadow: rgba(100, 100, 100, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+    margin-left: 180;
+  }
+  
+  img {
+    width: 100%;
+  }
+  
+  .details-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-size: 40px;
+    margin-right: 20px;
+  }
+  
+  #btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  #btn:hover {
+    background-color: blueviolet;
+  }
+  
+  #btn:hover ion-icon {
+    animation: upAndDown 0.3s alternate infinite;
+  }
+  
+  @keyframes upAndDown {
+    0% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(-3px);
+    }
+  }
+  
+  #details {
+    margin-top: 20px;
+    line-height: 1.6;
+    font-weight: bold;
+    text-align: justify;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  /* Fin du css de la box informative des planètes */
+  /* Débu du css du bouton back*/
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}

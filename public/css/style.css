@@ -1,0 +1,464 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Raleway&family=Tilt+Neon&display=swap");
+
+body {
+	margin: 0;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url(img_fond/Test.gif);
+	overflow: hidden;
+}
+
+/* raccourci avec var() */
+
+:root {
+	--primary-color: #ffff;
+	--primary-color-dark: #9333ea;
+	--secondary-color: #ca8a04;
+	--text-dark: #1f2937;
+	--text-light: #6b7280;
+	--extra-light: #faf5ff;
+	--max-width: 1200px;
+}
+
+/* Début du css de la navbar */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	font-family: "Poppins", sans-serif;
+}
+
+nav {
+	width: 150px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: blueviolet;
+	height: 100%;
+	z-index: 99;
+	display: flex;
+	flex-direction: column;
+}
+
+.nav__content {
+	padding: 1.5rem 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 100%;
+}
+
+nav .logo a {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #ffffff;
+	transition: 0.3s;
+}
+
+nav .logo a:hover {
+	color: #ca8a04;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	list-style: none;
+}
+
+ul li a {
+	padding: 0.5rem 1rem;
+	border: 2px solid transparent;
+	text-decoration: none;
+	font-weight: 600;
+	color: #ffffff;
+	transition: 0.3s;
+}
+
+ul li a:hover {
+	border-left-color: #ca8a04;
+	color: #ca8a04;
+}
+
+.content {
+	margin-left: 200px;
+	padding: 16px;
+	overflow-y: auto;
+}
+
+/* Fin du css de la navbar */
+/* css de la page équipe */
+
+.section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: transparent;
+	border-radius: 25px;
+	box-shadow: rgba(100, 100, 100, 0.2) 0px 7px 29px 0px;
+	padding: 20px;
+}
+
+.section__container {
+	min-width: 100vh;
+	max-width: calc(100% - 200px);
+	margin: auto;
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 4rem;
+}
+
+.content {
+	background: rgba(255, 255, 255, 0.8);
+	padding: 25px;
+	border-radius: 10px;
+	margin: 0;
+	margin-left: 150;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+}
+
+.title {
+	font-size: 2.5rem;
+	font-weight: 400;
+	line-height: 3rem;
+	color: var(--text-dark);
+	margin-bottom: 1rem;
+}
+
+.title span {
+	font-weight: 600;
+}
+
+.description {
+	line-height: 1.5rem;
+	color: var(--text-light);
+	margin-bottom: 1rem;
+}
+
+.adresse,
+.numero {
+	line-height: 1.5rem;
+	color: var(--text-light);
+	margin-bottom: 1rem;
+}
+
+.image {
+	display: grid;
+	place-items: center;
+}
+
+.image img {
+	width: min(20rem, 100%);
+	border-radius: 25%;
+	box-shadow: 0 0 3em #000000;
+}
+
+@media (max-width: 750px) {
+	nav {
+		width: 100%;
+		height: 85px;
+	}
+
+	nav .nav__content {
+		align-items: flex-start;
+	}
+
+	ul {
+		flex-direction: row;
+	}
+
+	ul li {
+		margin-right: 1rem;
+	}
+
+	.content {
+		margin-left: 0;
+	}
+
+	.section__container {
+		grid-template-columns: 1fr;
+	}
+
+	.image {
+		grid-area: auto;
+	}
+}
+
+/*  fin du css de la page equipe */
+/* Début du css de des planètes */
+
+.container {
+	font-size: 10px;
+	width: 40em;
+	height: 40em;
+	position: relative;
+	margin-left: 180;
+}
+
+.sun {
+	position: absolute;
+	top: 15em;
+	left: 15em;
+	width: 10em;
+	height: 10em;
+	background-color: yellow;
+	border-radius: 50%;
+	box-shadow: 0 0 3em white;
+}
+
+.mercure,
+.venus,
+.terre,
+.lune,
+.mars,
+.jupiter,
+.saturne,
+.uranus,
+.neptune {
+	position: absolute;
+	border-style: solid;
+	border-color: white transparent transparent transparent;
+	border-width: 0.1em 0.1em 0 0;
+	border-radius: 50%;
+}
+
+.mercure {
+	top: 12.5em;
+	left: 12.5em;
+	width: 15em;
+	height: 15em; /*Grey*/
+	animation: orbit-mercure 8s linear infinite; /*8s*/
+}
+
+.venus {
+	top: 9em;
+	left: 9em;
+	width: 22em;
+	height: 22em; /*burlywoord*/
+	animation: orbit-venus 25s linear infinite; /*25*/
+}
+
+.terre {
+	top: 5.5em;
+	left: 5.5em;
+	width: 29em;
+	height: 29em;
+	animation: orbit-terre-lune 30.5s linear infinite; /*30.5*/
+}
+
+.lune {
+	top: 0;
+	right: 0;
+	width: 8em;
+	height: 8em;
+	animation: orbit-terre-lune 45s linear infinite;
+}
+
+.mars {
+	top: 2em;
+	left: 2em;
+	width: 36em;
+	height: 36em; /*burlywoord*/
+	animation: orbit-mars 61s linear infinite; /*61s*/
+}
+
+.jupiter {
+	top: -2.5em;
+	left: -2.5em;
+	width: 44em;
+	height: 44em; /*burlywoord*/
+	animation: orbit-jupiter 98s linear infinite; /*98s*/
+}
+
+.saturne {
+	top: -7em;
+	left: -7em;
+	width: 53em;
+	height: 53em; /*burlywoord*/
+	animation: orbit-saturne 184s linear infinite; /*184s*/
+}
+
+.uranus {
+	top: -11em;
+	left: -11em;
+	width: 62em;
+	height: 62em; /*burlywoord*/
+	animation: orbit-uranus 479s linear infinite; /*479s*/
+}
+
+.neptune {
+	top: -15.2em;
+	left: -15.2em;
+	width: 70.5em;
+	height: 70.5em; /*burlywoord*/
+	animation: orbit-neptune 935s linear infinite; /*935s*/
+}
+
+/* Fin du css de des planètes */
+/* Début du css des planètes before-after */
+
+.mercure::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 1.4em;
+	right: 1.4em;
+	width: 1.5em;
+	height: 1.5em;
+	background-color: grey;
+}
+
+.venus::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 2em;
+	right: 2em;
+	width: 2.8em;
+	height: 2.8em;
+	background-color: beige;
+}
+
+.terre::before,
+.lune::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+}
+
+.terre::before {
+	top: 2.8em;
+	right: 2.8em;
+	width: 3em;
+	height: 3em;
+	background-color: aqua;
+}
+
+.lune::before {
+	top: 0.9em;
+	right: 0.9em;
+	width: 1.2em;
+	height: 1.2em;
+	background-color: silver;
+}
+
+.mars::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 4.2em;
+	right: 4.2em;
+	width: 1.9em;
+	height: 1.9em;
+	background-color: crimson;
+}
+
+.jupiter::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 4.3em;
+	right: 4.3em;
+	width: 4.5em;
+	height: 4.5em;
+	background-color: chocolate;
+}
+
+.saturne::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 5.5em;
+	right: 5.5em;
+	width: 3.8em;
+	height: 3.8em;
+	background-color: khaki;
+}
+
+.uranus::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 7em;
+	right: 7em;
+	width: 3.4em;
+	height: 3.4em;
+	background-color: cyan;
+}
+.neptune::before {
+	content: "";
+	position: absolute;
+	border-radius: 50%;
+	top: 8.6em;
+	right: 8.6em;
+	width: 3.1em;
+	height: 3.1em;
+	background-color: royalblue;
+}
+
+/* fin du css des planètes before */
+/* Début du css des planètes @keyframes */
+
+@keyframes orbit-mercure {
+	to {
+		transform: rotate(360deg);
+		cursor: pointer;
+	}
+}
+
+@keyframes orbit-venus {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes orbit-terre-lune {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes orbit-mars {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes orbit-jupiter {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes orbit-saturne {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes orbit-uranus {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes orbit-neptune {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+/* Fin du css des planètes @keyframes */

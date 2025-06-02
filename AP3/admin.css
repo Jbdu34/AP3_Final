@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url(img_fond/Test.gif);
+  font-family: 'Poppins', sans-serif;
+}
+.wrapper,
+.wrapper .img-area button{
+  background: #ecf0f3;
+  box-shadow: -3px -3px 7px #000000,
+               3px 3px 5px #000000;
+}
+.wrapper{
+  position: relative;
+  width: 950px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50;
+  margin-bottom: 50;
+}
+.wrapper .img-area{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-area .inner-area{
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  border-radius: 50%;
+}
+.inner-area img{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.wrapper .name{
+  font-size: 25px;
+  font-weight: 500;
+  color: #31344b;
+  margin: 10px 0 5px 0;
+}
+
+/* Style de base pour le formulaire */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Style pour le tableau des résultats */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Boutons Modifier et Supprimer */
+input[type="submit"].btn-primary,
+input[type="submit"].btn-danger {
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+input[type="submit"].btn-primary {
+    background-color: #007bff;
+}
+
+input[type="submit"].btn-danger {
+    background-color: #dc3545;
+}
+
+input[type="submit"].btn-primary:hover,
+input[type="submit"].btn-danger:hover {
+    opacity: 0.8;
+}
