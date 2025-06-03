@@ -1,0 +1,95 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Système Solaire - Les Planètes{% endblock %}
+
+{% block body %}
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Les Planètes du Système Solaire</h1>
+    
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mercure</h5>
+                    <p class="card-text">La planète la plus proche du Soleil.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Vénus</h5>
+                    <p class="card-text">La planète la plus chaude du système solaire.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Terre</h5>
+                    <p class="card-text">Notre planète, la seule connue à abriter la vie.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Mars</h5>
+                    <p class="card-text">La planète rouge, cible de futures missions habitées.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Jupiter</h5>
+                    <p class="card-text">La plus grande planète du système solaire.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Saturne</h5>
+                    <p class="card-text">La planète aux anneaux spectaculaires.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Uranus</h5>
+                    <p class="card-text">La planète couchée sur le côté.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Neptune</h5>
+                    <p class="card-text">La dernière planète du système solaire.</p>
+                    <a href="#" class="btn btn-primary">En savoir plus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="{{ path('app_sun') }}" class="btn btn-warning">Voir le Soleil</a>
+    </div>
+</div>
+{% endblock %}

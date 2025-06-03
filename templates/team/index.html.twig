@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+{% endblock %}
+
+{% block title %}Notre Équipe{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <h1 class="text-center mb-5">Notre Équipe</h1>
+    
+    <div class="row justify-content-center">
+        <div class="col-md-4 mb-4">
+            <div class="card team-member-card">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <i class="fas fa-user-circle fa-5x"></i>
+                    </div>
+                    <h5 class="card-title mb-3">Jean Dupont</h5>
+                    <p class="card-text text-primary mb-2">Directeur du Projet</p>
+                    <p class="card-text text-muted">Expertise en astrophysique</p>
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-envelope me-2"></i>Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card team-member-card">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <i class="fas fa-user-circle fa-5x"></i>
+                    </div>
+                    <h5 class="card-title mb-3">Marie Martin</h5>
+                    <p class="card-text text-primary mb-2">Responsable Technique</p>
+                    <p class="card-text text-muted">Spécialiste en développement web</p>
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-envelope me-2"></i>Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card team-member-card">
+                <div class="card-body">
+                    <div class="mb-4">
+                        <i class="fas fa-user-circle fa-5x"></i>
+                    </div>
+                    <h5 class="card-title mb-3">Pierre Durand</h5>
+                    <p class="card-text text-primary mb-2">Designer UI/UX</p>
+                    <p class="card-text text-muted">Expert en expérience utilisateur</p>
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-outline-primary btn-sm">
+                            <i class="fas fa-envelope me-2"></i>Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{{ path('app_planets') }}" class="btn btn-primary">
+            <i class="fas fa-arrow-left me-2"></i>Retour aux Planètes
+        </a>
+    </div>
+</div>
+{% endblock %}

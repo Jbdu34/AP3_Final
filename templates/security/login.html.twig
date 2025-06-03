@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+{% endblock %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card login-card">
+                <div class="card-header text-center">
+                    <h2 class="mb-0">
+                        <i class="fas fa-user-astronaut me-2"></i>
+                        Connexion
+                    </h2>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger d-flex align-items-center">
+                                <i class="fas fa-exclamation-circle me-2"></i>
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                        {% endif %}
+
+                        <div class="mb-4">
+                            <label for="username" class="form-label">
+                                <i class="fas fa-envelope me-2"></i>Email
+                            </label>
+                            <input type="email" value="{{ last_username }}" name="email" id="username" 
+                                   class="form-control" autocomplete="email" required autofocus>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="password" class="form-label">
+                                <i class="fas fa-lock me-2"></i>Mot de passe
+                            </label>
+                            <div class="input-group">
+                                <input type="password" name="password" id="password" 
+                                       class="form-control" autocomplete="current-password" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="_remember_me" id="remember_me">
+                                <label class="form-check-label" for="remember_me">
+                                    <i class="fas fa-clock me-2"></i>Se souvenir de moi
+                                </label>
+                            </div>
+                        </div>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-sign-in-alt me-2"></i>Se connecter
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center">
+                    <a href="{{ path('app_planets') }}" class="btn btn-link">
+                        <i class="fas fa-arrow-left me-2"></i>Retour à l'accueil
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block javascripts %}
+<script>
+document.getElementById('togglePassword').addEventListener('click', function() {
+    const password = document.getElementById('password');
+    const icon = this.querySelector('i');
+    
+    if (password.type === 'password') {
+        password.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        password.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+});
+</script>
+{% endblock %}
