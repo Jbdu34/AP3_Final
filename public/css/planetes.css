@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Raleway&family=Tilt+Neon&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img_fond/Test.gif);
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* raccourci avec var() */
+
+:root {
+	--primary-color: #ffff;
+	--primary-color-dark: #9333ea;
+	--secondary-color: #ca8a04;
+	--text-dark: #1f2937;
+	--text-light: #6b7280;
+	--extra-light: #faf5ff;
+	--max-width: 1200px;
+}
+
+/* Début du css de la navbar */
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+header {
+	font-family: "Poppins", sans-serif;
+}
+
+nav {
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: blueviolet;
+    height: 100%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__content {
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+nav .logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+nav .logo a:hover {
+    color: #ca8a04;
+}
+
+ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav ul {
+    flex-direction: column;
+}
+
+ul li a {
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    border-left-color: #ca8a04;
+    color: #ca8a04;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 16px;
+    overflow-y: auto;
+}
+
+/* Fin du css de la navbar */
+
+section {
+    margin: 0 auto;
+    margin-left: 180px;
+
+    h1 {
+        text-transform: uppercase;
+        font-size: 37px;
+        text-align: center;
+        padding-top: 1em;
+        margin-top: 0px;
+        color: blueviolet;
+        letter-spacing: 1px;
+
+        i {
+            font-size: 25px;
+            transform: rotate(30deg);
+            padding: 15px;
+
+            &:nth-child(1) {
+                transform: rotate(-30deg);
+            }
+        }
+    }
+
+    .content-scroll-horiz {
+        width: 44.2%;
+        margin: 0 auto;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #6a6969;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #d4d4d4;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #fff;
+            border-radius: 4px;
+        }
+
+        ul {
+            display: flex;
+            list-style: none;
+            text-align: left;
+            padding-left: 0px;
+
+            li {
+                background: rgba(255, 255, 255, 0.65);
+                min-width: 250px;
+                margin: 10px 5px 25px 5px;
+                display: inline-block;
+                padding: 10px;
+                border: 1px solid #d4d4d4;
+                border-radius: 20px;
+
+                a {
+                    color: blueviolet;
+                    text-decoration-line: none;
+                    font-size: 23px;
+
+                    div.foto {
+                        text-align: center;
+
+                        img {
+                            max-width: 100%;
+                            max-height: 250px;
+                        }
+                    }
+
+                    h3 {
+                        text-align: center;
+                    }
+                }
+
+                a:hover {
+                    color: #ca8a04;
+                }
+
+            }
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        .content-scroll-horiz {
+            width: 100%;
+        }
+    }
+}
